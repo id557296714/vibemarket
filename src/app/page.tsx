@@ -38,6 +38,7 @@ export default function HomePage() {
           VibeMarket — Browse Listings
         </h1>
 
+        {/* Search bar */}
         <input
           type="text"
           placeholder="Search listings..."
@@ -46,29 +47,39 @@ export default function HomePage() {
           onChange={(e) => setQuery(e.target.value)}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Row-style cards */}
+        <div className="space-y-4">
           {filtered.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
+              className="flex items-center gap-4 bg-white rounded-xl shadow-md hover:shadow-lg transition p-4"
             >
+              {/* Left: thumbnail */}
               <img
                 src={item.image}
                 alt={item.title}
-                className="h-40 w-full object-cover"
+                className="h-20 w-28 object-cover rounded-lg flex-shrink-0"
                 onError={(e) => {
-                  e.currentTarget.onerror = null;       // prevent loop
-                  e.currentTarget.src = "/placeholder.jpg";
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = "/placeholder.jpg"; // optional fallback
                 }}
               />
-              <div className="p-4">
-                <h2 className="text-xl font-semibold">{item.title}</h2>
-                <p className="text-gray-600 text-sm">{item.description}</p>
-                <p className="mt-2 font-medium">{item.price}</p>
+
+              {/* Middle: info */}
+              <div className="flex-1 min-w-0">
+                <h2 className="text-lg font-semibold truncate">{item.title}</h2>
+                <p className="text-gray-600 text-sm overflow-hidden text-ellipsis">
+                  {item.description}
+                </p>
                 <p className="text-sm text-gray-500">by {item.provider}</p>
                 <span className="inline-block mt-2 px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded">
                   {item.category}
                 </span>
+              </div>
+
+              {/* Right: price */}
+              <div className="text-right whitespace-nowrap pl-4 self-start sm:self-center">
+                <div className="text-xl font-semibold">{item.price}</div>
               </div>
             </div>
           ))}
