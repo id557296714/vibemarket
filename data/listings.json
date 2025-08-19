@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Fresh Apples",
+    "description": "Crisp and juicy apples direct from GreenFarm.",
+    "price": "5 USD/kg",
+    "provider": "GreenFarm",
+    "category": "Fruits",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=1200&q=60"
+  },
+  {
+    "id": 2,
+    "title": "Organic Honey",
+    "description": "Raw, organic honey in glass jars.",
+    "price": "12 USD/jar",
+    "provider": "SweetHive",
+    "category": "Honey",
+    "image": "https://images.unsplash.com/photo-1505577058444-a3dab90d4253?auto=format&fit=crop&w=1200&q=60"
+  },
+  {
+    "id": 3,
+    "title": "Handmade Soap",
+    "description": "Lavender-scented, all-natural handmade soap bars.",
+    "price": "3 USD/each",
+    "provider": "SoapWorks",
+    "category": "Cosmetics",
+    "image": "https://images.unsplash.com/photo-1609838463655-7d3b6b8f9a9f?auto=format&fit=crop&w=1200&q=60"
+  }
+]
